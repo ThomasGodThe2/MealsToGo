@@ -23,10 +23,11 @@ export const RestaurantInfo = ({ restaurant = {} }) => {
     photos = [
       "https://articles-images.sftcdn.net/wp-content/uploads/sites/3/2017/08/foodie-apps1-800x450.jpg",
     ],
-    address = "100 some random street",
+    vicinity: address = "100 some random street",
     isOpenNow = true,
     rating = 4,
     isClosedTemporarily = true,
+    placeId,
   } = restaurant;
 
   const ratingArray = Array.from(new Array(Math.floor(rating)));
@@ -41,8 +42,13 @@ export const RestaurantInfo = ({ restaurant = {} }) => {
         <Text variant="label">{name}</Text>
         <Section>
           <Rating>
-            {ratingArray.map(() => (
-              <SvgXml width={20} height={20} xml={star} />
+            {ratingArray.map((_, i) => (
+              <SvgXml
+                key={`star-${placeId}-${i}`}
+                width={20}
+                height={20}
+                xml={star}
+              />
             ))}
           </Rating>
           <SectionEnd>

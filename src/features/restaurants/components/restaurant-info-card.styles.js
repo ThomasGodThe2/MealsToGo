@@ -1,5 +1,5 @@
-import styled from "styled-components/native";
 import { Card } from "react-native-paper";
+import styled from "styled-components/native";
 
 export const Icon = styled.Image`
   width: 15px;
@@ -7,7 +7,7 @@ export const Icon = styled.Image`
 `;
 
 export const RestaurantCard = styled(Card)`
-  padding: ${(props) => props.theme.space[3]};
+  background-color: ${(props) => props.theme.colors.bg.primary};
 `;
 
 export const RestaurantCardCover = styled(Card.Cover)`
